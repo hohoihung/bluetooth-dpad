@@ -6,7 +6,9 @@ bluetooth.onBluetoothDisconnected(function () {
 })
 control.onEvent(EventBusSource.MES_DPAD_CONTROLLER_ID, EventBusValue.MICROBIT_EVT_ANY, function () {
     basic.clearScreen()
-    basic.showString("" + (control.eventValue()))
+    basic.showNumber(control.eventValue())
+    basic.pause(2000)
+    basic.clearScreen()
 })
 basic.showString("BT")
 basic.forever(function () {
